@@ -1,8 +1,14 @@
 namespace observer_design_pattern.observer;
 public class SpreadSheet : IObserver
 {
-    public void Update(int value)
+    private readonly DataSource _dataSource;
+
+    public SpreadSheet(DataSource dataSource)
     {
-        Console.WriteLine("SpreadSheet got notified:" + value);
+        _dataSource = dataSource;
+    }
+    public void Update()
+    {
+        Console.WriteLine("SpreadSheet got notified:" + _dataSource.Value);
     }
 }

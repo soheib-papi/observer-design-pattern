@@ -1,8 +1,15 @@
 namespace observer_design_pattern.observer;
 public class Chart : IObserver
 {
-    public void Update(int value)
+    private readonly DataSource _dataSource;
+
+    public Chart(DataSource dataSource)
     {
-        Console.WriteLine("Chart got notified:" + value);
+        _dataSource = dataSource;
+    }
+
+    public void Update()
+    {
+        Console.WriteLine("Chart got notified:" + _dataSource.Value);
     }
 }
