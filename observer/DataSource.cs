@@ -10,8 +10,8 @@ public class DataSource : Subject
         set
         {
             _value = value;
-            //Push style of communication
-            NotifyObservers(value);
+            //Pull style of communication
+            NotifyObservers();
         }
     }
 
